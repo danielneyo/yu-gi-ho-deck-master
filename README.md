@@ -61,7 +61,7 @@ Veja os detalhes da carta renderizados na tela.
 
 
 🔗 Demo
-Veja o projeto rodando em: Yu-Gi-Oh! Deck Master (danielneyo.github.io in Bing)
+Veja o projeto rodando em: Yu-Gi-Oh! Deck Master https://danielneyo.github.io/yu-gi-ho-deck-master/
 
 
 
