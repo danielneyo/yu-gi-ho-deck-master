@@ -8,6 +8,7 @@ O objetivo é criar uma página web em HTML, JavaScript e Tailwind CSS que conso
 
 O diferencial é que o usuário pode buscar cartas usando nomes em português do Brasil, que são traduzidos para os nomes oficiais em inglês antes da consulta na API.
 
+
 🚀 Funcionalidades
 Busca de cartas em português (ex: "Mago Negro").
 
@@ -27,6 +28,7 @@ Descrição
 
 Imagem oficial
 
+
 🛠️ Tecnologias utilizadas
 HTML5
 
@@ -45,6 +47,7 @@ Código
 └── README.md         # Documentação
 
 
+
 📖 Como executar
 Clone este repositório:
 
@@ -56,8 +59,10 @@ Digite o nome da carta em português e clique em Invocar.
 
 Veja os detalhes da carta renderizados na tela. 
 
+
 🔗 Demo
 Veja o projeto rodando em: Yu-Gi-Oh! Deck Master (danielneyo.github.io in Bing)
+
 
 
 📜 Exemplos de cartas suportadas
@@ -71,12 +76,14 @@ Exodia, o Proibido → Exodia the Forbidden One
 
 Slifer, o Dragão Celeste → Slifer the Sky Dragon
 
+
 📌 Limitações
 A API retorna apenas nomes oficiais em inglês, por isso foi criado um mapa de tradução para suportar nomes em português.
 
 Apenas cartas adicionadas ao dicionário de tradução podem ser buscadas em português.
 
 É possível expandir o dicionário para incluir mais cartas.
+
 
 🤝 Contribuição
 Quer ajudar a expandir o projeto?
@@ -86,6 +93,7 @@ Adicione novas traduções PT → EN no objeto traducaoCartas.
 Melhore o design com Tailwind.
 
 Crie novas funcionalidades (filtros, decks personalizados, etc.).
+
 
 📄 Licença
 Este projeto é de uso educacional e não possui fins comerciais.
