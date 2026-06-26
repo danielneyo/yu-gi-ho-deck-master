@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Yu-Gi-Oh! Deck Master</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center p-6">
+
+  <h1 class="text-3xl font-bold mb-6">Yu-Gi-Oh! Deck Master</h1>
+  <p class="mb-4">Digite o nome da carta em português:</p>
+
+  <div class="flex gap-2 mb-6">
+    <input id="inputCarta" type="text" placeholder="Ex: Mago Negro"
+      class="px-4 py-2 rounded text-black w-64">
+    <button onclick="buscarCarta()"
+      class="bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded">Invocar</button>
+  </div>
+
+  <div id="resultado" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl"></div>
+
+  <script>
+    // Mapeamento de nomes PT → EN
+    const traducaoCartas = {
+      // Dicionário de cartas Yu-Gi-Oh PT → EN
+      "Mago Negro": "Dark Magician",
+      "Dragão Branco de Olhos Azuis": "Blue-Eyes White Dragon",
+      "Dragão Negro de Olhos Vermelhos": "Red-Eyes Black Dragon",
+      "Exodia, o Proibido": "Exodia the Forbidden One",
+      "Caveira Invocadora": "Summoned Skull",
+      "Dragão Negro Metálico": "Red-Eyes Darkness Metal Dragon",
+      "Dragão Supremo de Olhos Azuis": "Blue-Eyes Ultimate Dragon",
+      "Dragão Explosivo": "Exploder Dragon",
+      "Dragão Armado das Trevas": "Dark Armed Dragon",
+      "Dragão da Catapulta": "Catapult Turtle",
+      "Kuriboh": "Kuriboh",
+      "Jinzo": "Jinzo",
+      "Slifer, o Dragão Celeste": "Slifer the Sky Dragon",
+      "Obelisco, o Atormentador": "Obelisk the Tormentor",
+      "O Dragão Alado de Rá": "The Winged Dragon of Ra",
+      "Dragão Negro de Olhos Vermelhos Metálico": "Red-Eyes Black Metal Dragon",
+      "Dragão Branco Alternativo de Olhos Azuis": "Blue-Eyes Alternative White Dragon",
+      "Dragão Explosivo de Olhos Vermelhos": "Red-Eyes Flare Metal Dragon",
+      "Dragão Negro Explosivo": "Red-Eyes Darkness Dragon",
+      "Dragão Supremo de Olhos Vermelhos": "Red-Eyes Slash Dragon"
+
+    };
+
+    async function buscarCarta() {
+      const nomePt = document.getElementById("inputCarta").value.trim();
+      const nomeEn = traducaoCartas[nomePt];
+
+      if (!nomeEn) {
+        alert("Carta não encontrada no mapa de tradução.");
+        return;
+      }
+
+      try {
+        const resposta = await fetch(`https://db.ygoprodeck.com/api/v7/cardinfo.php?name=${encodeURIComponent(nomeEn)}`);
+        const dados = await resposta.json();
+        const carta = dados.data[0];
+
+        const resultadoDiv = document.getElementById("resultado");
+        resultadoDiv.innerHTML = `
+          <div class="bg-gray-800 rounded-lg shadow-lg p-4">
+            <img src="${carta.card_images[0].image_url}" alt="${carta.name}" class="rounded mb-4">
+            <h2 class="text-xl font-bold mb-2">${nomePt} (${carta.name})</h2>
+            <p class="text-sm mb-2"><strong>Tipo:</strong> ${carta.type}</p>
+            <p class="text-sm mb-2"><strong>Descrição:</strong> ${carta.desc}</p>
+          </div>
+        `;
+      } catch (error) {
+        console.error(error);
+        alert("Erro ao buscar carta.");
+      }
+    }
+  </script>
+</body>
+</html>
