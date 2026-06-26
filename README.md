@@ -42,7 +42,9 @@ YGOProDeck API
 
 📂 Estrutura do projeto
 
+
 ├── index.html        # Página principal
+
 └── README.md         # Documentação
 
 
