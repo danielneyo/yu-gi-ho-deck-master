@@ -1,5 +1,7 @@
 ![Yu-Gi-Oh Deck Master Banner](https://copilot.microsoft.com/th/id/BCO.174f388e-9f71-466d-aa87-e6e0aa2466a2.png)
+
 Yu-Gi-Oh! Deck Master 🎴
+
 📌 Sobre o projeto
 Este projeto foi desenvolvido como parte da atividade A2 - Projeto consumindo API.
 O objetivo é criar uma página web em HTML, JavaScript e Tailwind CSS que consome a API pública YGOProDeck para pesquisar cartas de Yu-Gi-Oh.
