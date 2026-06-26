@@ -41,8 +41,7 @@ Fetch API
 YGOProDeck API
 
 📂 Estrutura do projeto
-Código
-/
+
 ├── index.html        # Página principal
 └── README.md         # Documentação
 
